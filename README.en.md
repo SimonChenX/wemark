@@ -155,8 +155,8 @@ Third-party dependencies (bundled in `lib/`, both MIT licensed):
 
 ## Acknowledgements
 
-- [Simon's Blog](https://blog.glemon.cn/)
+[Simon's Blog](https://blog.glemon.cn/)
 
 ## Friend Links
 
-- [LINUX DO](https://linux.do)
+[LINUX DO](https://linux.do)

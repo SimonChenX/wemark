@@ -51,7 +51,7 @@ If this policy changes, we will update this file in the repository and revise th
 If you have any questions about this privacy policy, please contact us by:
 
 - Opening an Issue on the GitHub repository
-- Repository: https://github.com/ (replace with your repository URL)
+- Repository: https://github.com/SimonChenX/wemark
 
 ---
 

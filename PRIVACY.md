@@ -49,7 +49,7 @@ WeMark（微信文章转 Markdown）是一款开源的 Chrome 浏览器扩展。
 如对本隐私政策有任何疑问，请通过以下方式联系：
 
 - 在 GitHub 仓库提交 Issue
-- 仓库地址：https://github.com/（请替换为您的仓库地址）
+- 仓库地址：https://github.com/SimonChenX/wemark
 
 ---
 

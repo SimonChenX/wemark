@@ -157,7 +157,7 @@ A：无表头行（首行非 `<th>`）的表格会保留为 HTML 原样输出，
 
 ## 鸣谢
 
-- [Simon's Blog](https://blog.glemon.cn/)
+[Simon's Blog](https://blog.glemon.cn/)
  
 ## 友链
 [LINUX DO](https://linux.do)
