@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Node.js（本地测试依赖，通过 NODE_MODULES 或 /tmp/wx-md-test 安装）
+node_modules/
+package.json
+package-lock.json
+
+# 编辑器 / IDE
+.vscode/
+.idea/
+*.swp
+
+# 测试产物
+*.log
