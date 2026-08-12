@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+  popup.html — 扩展弹窗：设置 / 单篇保存 / 批量导入 三视图
+  Extension popup with three views: Settings / Single save / Batch import.
+  License: MIT — see LICENSE
+-->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>WeMark - 微信文章转 Markdown</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="header">
+    <img src="icons/icon48.png" alt="icon" width="22" height="22">
+    <h1>微信文章转 Markdown</h1>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab" data-view="settings">设置</button>
+    <button class="tab active" data-view="single">单篇保存</button>
+    <button class="tab" data-view="batch">批量导入</button>
+  </nav>
+
+  <!-- 设置视图 -->
+  <section id="view-settings" class="view" hidden>
+    <section class="form">
+      <label class="field">
+        <span class="field-label">保存目录 <em>（相对「下载」文件夹）</em></span>
+        <input type="text" id="baseDir" placeholder="WeChatArticles" spellcheck="false">
+        <span class="field-hint">支持子路径，如：WeChatArticles/2026</span>
+      </label>
+
+      <label class="switch-row">
+        <span>每篇文章保存为独立文件夹</span>
+        <span class="switch">
+          <input type="checkbox" id="perArticleFolder">
+          <i></i>
+        </span>
+      </label>
+
+      <label class="switch-row">
+        <span>图片下载到本地 images/ 目录</span>
+        <span class="switch">
+          <input type="checkbox" id="downloadImages">
+          <i></i>
+        </span>
+      </label>
+
+      <label class="switch-row">
+        <span>同时保存一份独立 HTML</span>
+        <span class="switch">
+          <input type="checkbox" id="saveHtml">
+          <i></i>
+        </span>
+      </label>
+
+      <div class="preview" id="pathPreview"></div>
+    </section>
+
+    <section class="actions">
+      <button id="saveSettingsBtn" class="btn-primary">保存设置</button>
+      <div class="save-settings-tip" id="saveSettingsTip"></div>
+    </section>
+
+    <section class="settings-footer-hint">设置对单篇保存与批量导入同时生效</section>
+  </section>
+
+  <!-- 单篇保存视图 -->
+  <section id="view-single" class="view">
+    <section class="form">
+      <div class="settings-summary" id="settingsSummary"></div>
+    </section>
+
+    <section class="actions">
+      <button id="saveBtn" class="btn-primary">保存当前文章</button>
+    </section>
+
+    <section class="progress" id="progressBox" hidden>
+      <div class="progress-text" id="progressText">准备中…</div>
+      <div class="progress-bar"><i id="progressBar"></i></div>
+    </section>
+
+    <section class="status" id="statusBox" hidden></section>
+  </section>
+
+  <!-- 批量导入视图 -->
+  <section id="view-batch" class="view" hidden>
+    <section class="form">
+      <div class="settings-summary"></div>
+      <label class="field">
+        <span class="field-label">文章链接列表 <em>（每行一个，或用逗号/空格分隔）</em></span>
+        <textarea id="urlInput" rows="6" spellcheck="false"
+          placeholder="https://mp.weixin.qq.com/s/xxxxx&#10;https://mp.weixin.qq.com/s/yyyyy"></textarea>
+      </label>
+      <div class="batch-toolbar">
+        <button id="importFileBtn" class="btn-ghost">导入 .txt 文件</button>
+        <input type="file" id="fileInput" accept=".txt,.csv,.md,text/plain" hidden>
+        <span class="url-count" id="urlCount">0 个链接</span>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button id="batchStartBtn" class="btn-primary">开始批量保存</button>
+      <button id="batchStopBtn" class="btn-danger" hidden>停止</button>
+    </section>
+
+    <section class="batch-summary" id="batchSummary" hidden>
+      <span id="batchSummaryText"></span>
+      <button id="copyResultBtn" class="btn-ghost btn-mini" hidden>复制结果</button>
+    </section>
+
+    <ul class="batch-list" id="batchList"></ul>
+  </section>
+
+  <footer class="footer">
+    <span>快捷键 <kbd>⌘/Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd> 按当前设置直接保存</span>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
